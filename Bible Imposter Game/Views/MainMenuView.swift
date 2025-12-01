@@ -62,6 +62,9 @@ struct MainMenuView: View {
                     .foregroundColor(.gray)
                     .padding(.bottom)
             }
+            
+            Link("tjc.org", destination: URL(string: "https://tjc.org/")!)
+                .padding(.bottom)
         }
         .padding(.top)
         .alert(isPresented: $vm.showError) {
