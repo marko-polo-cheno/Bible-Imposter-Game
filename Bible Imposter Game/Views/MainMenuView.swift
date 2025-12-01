@@ -65,6 +65,11 @@ struct MainMenuView: View {
             
             Link("tjc.org", destination: URL(string: "https://tjc.org/")!)
                 .padding(.bottom)
+            
+            Text("p.s. please email mark.chen@tjc.org if something seems off")
+                .font(.caption2)
+                .foregroundColor(.gray)
+                .padding(.bottom)
         }
         .padding(.top)
         .alert(isPresented: $vm.showError) {
