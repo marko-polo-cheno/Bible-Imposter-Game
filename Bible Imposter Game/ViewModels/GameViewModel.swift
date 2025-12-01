@@ -37,6 +37,11 @@ class GameViewModel: ObservableObject {
         saveRoster()
     }
     
+    func removeAllPlayers() {
+        roster.removeAll()
+        saveRoster()
+    }
+    
     private func saveRoster() {
         if let encoded = try? JSONEncoder().encode(roster) {
             UserDefaults.standard.set(encoded, forKey: rosterKey)

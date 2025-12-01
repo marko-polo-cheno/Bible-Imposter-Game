@@ -34,11 +34,29 @@ struct MainMenuView: View {
                 .padding(.trailing)
             }
             
-            List {
-                ForEach(vm.roster) { player in
-                    Text(player.name)
+            HStack {
+                Text("Players")
+                    .font(.headline)
+                Spacer()
+                if !vm.roster.isEmpty {
+                    Button(action: {
+                        vm.removeAllPlayers()
+                    }) {
+                        Text("Clear All")
+                            .foregroundColor(.red)
+                            .font(.subheadline)
+                    }
                 }
-                .onDelete(perform: vm.removePlayer)
+            }
+            .padding(.horizontal)
+            
+            List {
+                Section(footer: Text("Swipe left to remove a player")) {
+                    ForEach(vm.roster) { player in
+                        Text(player.name)
+                    }
+                    .onDelete(perform: vm.removePlayer)
+                }
             }
             .listStyle(InsetGroupedListStyle())
             
