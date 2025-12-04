@@ -3,6 +3,7 @@ import SwiftUI
 struct MainMenuView: View {
     @ObservedObject var vm: GameViewModel
     @State private var newPlayerName: String = ""
+    @FocusState private var isKeyboardVisible: Bool
     
     var body: some View {
         VStack {
@@ -22,6 +23,7 @@ struct MainMenuView: View {
             HStack {
                 TextField("Add Player Name", text: $newPlayerName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .focused($isKeyboardVisible)
                     .padding(.horizontal)
                 
                 Button(action: addPlayer) {
@@ -60,34 +62,36 @@ struct MainMenuView: View {
             }
             .listStyle(InsetGroupedListStyle())
             
-            Button(action: {
-                vm.startGame()
-            }) {
-                Text("Start Game")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(vm.roster.count >= 3 ? Color.blue : Color.gray)
-                    .cornerRadius(10)
-            }
-            .disabled(vm.roster.count < 3)
-            .padding()
-            
-            if vm.roster.count < 3 {
-                Text("Need at least 3 players to start.")
-                    .font(.caption)
+            if !isKeyboardVisible {
+                Button(action: {
+                    vm.startGame()
+                }) {
+                    Text("Start Game")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(vm.roster.count >= 3 ? Color.blue : Color.gray)
+                        .cornerRadius(10)
+                }
+                .disabled(vm.roster.count < 3)
+                .padding()
+                
+                if vm.roster.count < 3 {
+                    Text("Need at least 3 players to start.")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                        .padding(.bottom)
+                }
+                
+                Link("tjc.org", destination: URL(string: "https://tjc.org/")!)
+                    .padding(.bottom)
+                
+                Text("p.s. please email mark.chen@tjc.org if something seems off")
+                    .font(.caption2)
                     .foregroundColor(.gray)
                     .padding(.bottom)
             }
-            
-            Link("tjc.org", destination: URL(string: "https://tjc.org/")!)
-                .padding(.bottom)
-            
-            Text("p.s. please email mark.chen@tjc.org if something seems off")
-                .font(.caption2)
-                .foregroundColor(.gray)
-                .padding(.bottom)
         }
         .padding(.top)
         .alert(isPresented: $vm.showError) {
