@@ -1,156 +1,226 @@
 [
-  {"id": 1, "term": "Melchizedek"},
-  {"id": 2, "term": "Methuselah"},
-  {"id": 3, "term": "Potiphar"},
-  {"id": 4, "term": "Jethro"},
-  {"id": 5, "term": "Korah"},
-  {"id": 6, "term": "Og"},
-  {"id": 7, "term": "Sihon"},
-  {"id": 8, "term": "Eglon"},
-  {"id": 9, "term": "Ehud"},
-  {"id": 10, "term": "Deborah"},
-  {"id": 11, "term": "Barak"},
-  {"id": 12, "term": "Sisera"},
-  {"id": 13, "term": "Jael"},
-  {"id": 14, "term": "Jephthah"},
-  {"id": 15, "term": "Manoah"},
-  {"id": 16, "term": "Ichabod"},
-  {"id": 17, "term": "Ebenezer"},
-  {"id": 18, "term": "Adonijah"},
-  {"id": 19, "term": "Rehoboam"},
-  {"id": 20, "term": "Jeroboam"},
-  {"id": 21, "term": "Ahab"},
-  {"id": 22, "term": "Jezebel"},
-  {"id": 23, "term": "Naaman"},
-  {"id": 24, "term": "Gehazi"},
-  {"id": 25, "term": "Jehu"},
-  {"id": 26, "term": "Athaliah"},
-  {"id": 27, "term": "Uzziah"},
-  {"id": 28, "term": "Hezekiah"},
-  {"id": 29, "term": "Josiah"},
-  {"id": 30, "term": "Sennacherib"},
-  {"id": 31, "term": "Cyrus"},
-  {"id": 32, "term": "Zerubbabel"},
-  {"id": 33, "term": "Ezra"},
-  {"id": 34, "term": "Sanballat"},
-  {"id": 35, "term": "Tobiah"},
-  {"id": 36, "term": "Vashti"},
-  {"id": 37, "term": "Eliphaz"},
-  {"id": 38, "term": "Bildad"},
-  {"id": 39, "term": "Zophar"},
-  {"id": 40, "term": "Elihu"},
-  {"id": 41, "term": "Behemoth"},
-  {"id": 42, "term": "Leviathan"},
-  {"id": 43, "term": "Gog"},
-  {"id": 44, "term": "Magog"},
-  {"id": 45, "term": "Obadiah"},
-  {"id": 46, "term": "Nahum"},
-  {"id": 47, "term": "Habakkuk"},
-  {"id": 48, "term": "Zephaniah"},
-  {"id": 49, "term": "Haggai"},
-  {"id": 50, "term": "Zechariah"},
-  {"id": 51, "term": "Abomination of Desolation"},
-  {"id": 52, "term": "Antichrist"},
-  {"id": 53, "term": "False Prophet"},
-  {"id": 54, "term": "Two Witnesses"},
-  {"id": 55, "term": "Great White Throne"},
-  {"id": 56, "term": "Four Living Creatures"},
-  {"id": 57, "term": "Twenty-Four Elders"},
-  {"id": 58, "term": "144,000"},
-  {"id": 59, "term": "Wormwood"},
-  {"id": 60, "term": "Armageddon"},
-  {"id": 61, "term": "Euphrates"},
-  {"id": 62, "term": "Zion"},
-  {"id": 63, "term": "Olivet"},
-  {"id": 64, "term": "Kidron"},
-  {"id": 65, "term": "Hinnom"},
-  {"id": 66, "term": "Megiddo"},
-  {"id": 67, "term": "Areopagus"},
-  {"id": 68, "term": "Corinth"},
-  {"id": 69, "term": "Ephesus"},
-  {"id": 70, "term": "Galatia"},
-  {"id": 71, "term": "Philippi"},
-  {"id": 72, "term": "Colossae"},
-  {"id": 73, "term": "Thessalonica"},
-  {"id": 74, "term": "Laodicea"},
-  {"id": 75, "term": "Smyrna"},
-  {"id": 76, "term": "Pergamum"},
-  {"id": 77, "term": "Thyatira"},
-  {"id": 78, "term": "Sardis"},
-  {"id": 79, "term": "Philadelphia"},
-  {"id": 80, "term": "Patmos"},
-  {"id": 81, "term": "Elohim"},
-  {"id": 82, "term": "Adonai"},
-  {"id": 83, "term": "Rabbi"},
-  {"id": 84, "term": "Hosanna"},
-  {"id": 85, "term": "Maranatha"},
-  {"id": 86, "term": "Raca"},
-  {"id": 87, "term": "Mammon"},
-  {"id": 88, "term": "Belial"},
-  {"id": 89, "term": "Abaddon"},
-  {"id": 90, "term": "Apollyon"},
-  {"id": 91, "term": "Pharisee"},
-  {"id": 92, "term": "Sadducee"},
-  {"id": 93, "term": "Sanhedrin"},
-  {"id": 94, "term": "Synagogue"},
-  {"id": 95, "term": "Centurion"},
-  {"id": 96, "term": "Publican"},
-  {"id": 97, "term": "Tetrarch"},
-  {"id": 98, "term": "Proconsul"},
-  {"id": 99, "term": "Urim"},
-  {"id": 100, "term": "Thummim"},
-  {"id": 101, "term": "Ephod"},
-  {"id": 102, "term": "Breastplate"},
-  {"id": 103, "term": "Phylactery"},
-  {"id": 104, "term": "Mezuzah"},
-  {"id": 105, "term": "Abimelech"},
-  {"id": 106, "term": "Ahaz"},
-  {"id": 107, "term": "Ahaziah"},
-  {"id": 108, "term": "Amaziah"},
-  {"id": 109, "term": "Amon"},
-  {"id": 110, "term": "Asa"},
-  {"id": 111, "term": "Baasha"},
-  {"id": 112, "term": "Elah"},
-  {"id": 113, "term": "Jehoahaz"},
-  {"id": 114, "term": "Jehoash"},
-  {"id": 115, "term": "Jehoiachin"},
-  {"id": 116, "term": "Jehoiakim"},
-  {"id": 117, "term": "Joram"},
-  {"id": 118, "term": "Menahem"},
-  {"id": 119, "term": "Nadab"},
-  {"id": 120, "term": "Omri"},
-  {"id": 121, "term": "Pekah"},
-  {"id": 122, "term": "Pekahiah"},
-  {"id": 123, "term": "Shallum"},
-  {"id": 124, "term": "Tibni"},
-  {"id": 125, "term": "Zimri"},
-  {"id": 126, "term": "Azariah"},
-  {"id": 127, "term": "Jotham"},
-  {"id": 128, "term": "Manasseh"},
-  {"id": 129, "term": "Zedekiah"},
-  {"id": 130, "term": "Huldah"},
-  {"id": 131, "term": "Noadiah"},
-  {"id": 132, "term": "Oded"},
-  {"id": 133, "term": "Iddo"},
-  {"id": 134, "term": "Shemaiah"},
-  {"id": 135, "term": "Hanani"},
-  {"id": 136, "term": "Micaiah"},
-  {"id": 137, "term": "Eliezer"},
-  {"id": 138, "term": "Jahaziel"},
-  {"id": 139, "term": "Azar"},
-  {"id": 140, "term": "Gemariah"},
-  {"id": 141, "term": "Irijah"},
-  {"id": 142, "term": "Jaazaniah"},
-  {"id": 143, "term": "Johanan"},
-  {"id": 144, "term": "Kareah"},
-  {"id": 145, "term": "Seraiah"},
-  {"id": 146, "term": "Ishmael"},
-  {"id": 147, "term": "Gedaliah"},
-  {"id": 148, "term": "Ebed-Melech"},
-  {"id": 149, "term": "Baruch"},
-  {"id": 150, "term": "Neri"},
-  {"id": 151, "term": "Shealtiel"},
-  {"id": 152, "term": "Jeshua"},
-  {"id": 153, "term": "Geshem"},
-  {"id": 154, "term": "Eliashib"}
+  {
+    "id": 1,
+    "term": "Melchizedek"
+  },
+  {
+    "id": 2,
+    "term": "Methuselah"
+  },
+  {
+    "id": 3,
+    "term": "Potiphar"
+  },
+  {
+    "id": 4,
+    "term": "Jethro"
+  },
+  {
+    "id": 5,
+    "term": "Korah"
+  },
+  {
+    "id": 6,
+    "term": "Eglon"
+  },
+  {
+    "id": 7,
+    "term": "Ehud"
+  },
+  {
+    "id": 8,
+    "term": "Deborah"
+  },
+  {
+    "id": 9,
+    "term": "Barak"
+  },
+  {
+    "id": 10,
+    "term": "Sisera"
+  },
+  {
+    "id": 11,
+    "term": "Jael"
+  },
+  {
+    "id": 12,
+    "term": "Jephthah"
+  },
+  {
+    "id": 13,
+    "term": "Ebenezer"
+  },
+  {
+    "id": 14,
+    "term": "Adonijah"
+  },
+  {
+    "id": 15,
+    "term": "Rehoboam"
+  },
+  {
+    "id": 16,
+    "term": "Jeroboam"
+  },
+  {
+    "id": 17,
+    "term": "Ahab"
+  },
+  {
+    "id": 18,
+    "term": "Jezebel"
+  },
+  {
+    "id": 19,
+    "term": "Gehazi"
+  },
+  {
+    "id": 20,
+    "term": "Jehu"
+  },
+  {
+    "id": 21,
+    "term": "Athaliah"
+  },
+  {
+    "id": 22,
+    "term": "Uzziah"
+  },
+  {
+    "id": 23,
+    "term": "Hezekiah"
+  },
+  {
+    "id": 24,
+    "term": "Josiah"
+  },
+  {
+    "id": 25,
+    "term": "Ezra"
+  },
+  {
+    "id": 26,
+    "term": "Leviathan"
+  },
+  {
+    "id": 27,
+    "term": "Obadiah"
+  },
+  {
+    "id": 28,
+    "term": "Nahum"
+  },
+  {
+    "id": 29,
+    "term": "Habakkuk"
+  },
+  {
+    "id": 30,
+    "term": "Zephaniah"
+  },
+  {
+    "id": 31,
+    "term": "Haggai"
+  },
+  {
+    "id": 32,
+    "term": "Zechariah"
+  },
+  {
+    "id": 33,
+    "term": "False Prophet"
+  },
+  {
+    "id": 34,
+    "term": "Four Living Creatures"
+  },
+  {
+    "id": 35,
+    "term": "Twenty-Four Elders"
+  },
+  {
+    "id": 36,
+    "term": "144,000"
+  },
+  {
+    "id": 37,
+    "term": "Euphrates"
+  },
+  {
+    "id": 38,
+    "term": "Zion"
+  },
+  {
+    "id": 39,
+    "term": "Corinth"
+  },
+  {
+    "id": 40,
+    "term": "Ephesus"
+  },
+  {
+    "id": 41,
+    "term": "Galatia"
+  },
+  {
+    "id": 42,
+    "term": "Philippi"
+  },
+  {
+    "id": 43,
+    "term": "Colossae"
+  },
+  {
+    "id": 44,
+    "term": "Thessalonica"
+  },
+  {
+    "id": 45,
+    "term": "Philadelphia"
+  },
+  {
+    "id": 46,
+    "term": "Hosanna"
+  },
+  {
+    "id": 47,
+    "term": "Raca"
+  },
+  {
+    "id": 48,
+    "term": "Mammon"
+  },
+  {
+    "id": 49,
+    "term": "Belial"
+  },
+  {
+    "id": 50,
+    "term": "Pharisee"
+  },
+  {
+    "id": 51,
+    "term": "Centurion"
+  },
+  {
+    "id": 52,
+    "term": "Abimelech"
+  },
+  {
+    "id": 53,
+    "term": "Ahaz"
+  },
+  {
+    "id": 54,
+    "term": "Jehoiachin"
+  },
+  {
+    "id": 55,
+    "term": "Jehoiakim"
+  },
+  {
+    "id": 56,
+    "term": "Manasseh"
+  }
 ]
