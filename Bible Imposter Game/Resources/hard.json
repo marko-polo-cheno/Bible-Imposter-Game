@@ -1,226 +1,80 @@
 [
-  {
-    "id": 1,
-    "term": "Melchizedek"
-  },
-  {
-    "id": 2,
-    "term": "Methuselah"
-  },
-  {
-    "id": 3,
-    "term": "Potiphar"
-  },
-  {
-    "id": 4,
-    "term": "Jethro"
-  },
-  {
-    "id": 5,
-    "term": "Korah"
-  },
-  {
-    "id": 6,
-    "term": "Eglon"
-  },
-  {
-    "id": 7,
-    "term": "Ehud"
-  },
-  {
-    "id": 8,
-    "term": "Deborah"
-  },
-  {
-    "id": 9,
-    "term": "Barak"
-  },
-  {
-    "id": 10,
-    "term": "Sisera"
-  },
-  {
-    "id": 11,
-    "term": "Jael"
-  },
-  {
-    "id": 12,
-    "term": "Jephthah"
-  },
-  {
-    "id": 13,
-    "term": "Ebenezer"
-  },
-  {
-    "id": 14,
-    "term": "Adonijah"
-  },
-  {
-    "id": 15,
-    "term": "Rehoboam"
-  },
-  {
-    "id": 16,
-    "term": "Jeroboam"
-  },
-  {
-    "id": 17,
-    "term": "Ahab"
-  },
-  {
-    "id": 18,
-    "term": "Jezebel"
-  },
-  {
-    "id": 19,
-    "term": "Gehazi"
-  },
-  {
-    "id": 20,
-    "term": "Jehu"
-  },
-  {
-    "id": 21,
-    "term": "Athaliah"
-  },
-  {
-    "id": 22,
-    "term": "Uzziah"
-  },
-  {
-    "id": 23,
-    "term": "Hezekiah"
-  },
-  {
-    "id": 24,
-    "term": "Josiah"
-  },
-  {
-    "id": 25,
-    "term": "Ezra"
-  },
-  {
-    "id": 26,
-    "term": "Leviathan"
-  },
-  {
-    "id": 27,
-    "term": "Obadiah"
-  },
-  {
-    "id": 28,
-    "term": "Nahum"
-  },
-  {
-    "id": 29,
-    "term": "Habakkuk"
-  },
-  {
-    "id": 30,
-    "term": "Zephaniah"
-  },
-  {
-    "id": 31,
-    "term": "Haggai"
-  },
-  {
-    "id": 32,
-    "term": "Zechariah"
-  },
-  {
-    "id": 33,
-    "term": "False Prophet"
-  },
-  {
-    "id": 34,
-    "term": "Four Living Creatures"
-  },
-  {
-    "id": 35,
-    "term": "Twenty-Four Elders"
-  },
-  {
-    "id": 36,
-    "term": "144,000"
-  },
-  {
-    "id": 37,
-    "term": "Euphrates"
-  },
-  {
-    "id": 38,
-    "term": "Zion"
-  },
-  {
-    "id": 39,
-    "term": "Corinth"
-  },
-  {
-    "id": 40,
-    "term": "Ephesus"
-  },
-  {
-    "id": 41,
-    "term": "Galatia"
-  },
-  {
-    "id": 42,
-    "term": "Philippi"
-  },
-  {
-    "id": 43,
-    "term": "Colossae"
-  },
-  {
-    "id": 44,
-    "term": "Thessalonica"
-  },
-  {
-    "id": 45,
-    "term": "Philadelphia"
-  },
-  {
-    "id": 46,
-    "term": "Hosanna"
-  },
-  {
-    "id": 47,
-    "term": "Raca"
-  },
-  {
-    "id": 48,
-    "term": "Mammon"
-  },
-  {
-    "id": 49,
-    "term": "Belial"
-  },
-  {
-    "id": 50,
-    "term": "Pharisee"
-  },
-  {
-    "id": 51,
-    "term": "Centurion"
-  },
-  {
-    "id": 52,
-    "term": "Abimelech"
-  },
-  {
-    "id": 53,
-    "term": "Ahaz"
-  },
-  {
-    "id": 54,
-    "term": "Jehoiachin"
-  },
-  {
-    "id": 55,
-    "term": "Jehoiakim"
-  },
-  {
-    "id": 56,
-    "term": "Manasseh"
-  }
+  {"id": 1, "term": "Melchizedek", "hint": "person"},
+  {"id": 2, "term": "Methuselah", "hint": "person"},
+  {"id": 3, "term": "Potiphar", "hint": "person"},
+  {"id": 4, "term": "Jethro", "hint": "person"},
+  {"id": 5, "term": "Korah", "hint": "person"},
+  {"id": 6, "term": "Eglon", "hint": "person"},
+  {"id": 7, "term": "Ehud", "hint": "person"},
+  {"id": 8, "term": "Deborah", "hint": "person"},
+  {"id": 9, "term": "Barak", "hint": "person"},
+  {"id": 10, "term": "Sisera", "hint": "person"},
+  {"id": 11, "term": "Jael", "hint": "person"},
+  {"id": 12, "term": "Jephthah", "hint": "person"},
+  {"id": 13, "term": "Ebenezer", "hint": "object + place"},
+  {"id": 14, "term": "Adonijah", "hint": "person"},
+  {"id": 15, "term": "Rehoboam", "hint": "person"},
+  {"id": 16, "term": "Jeroboam", "hint": "person"},
+  {"id": 17, "term": "Ahab", "hint": "person"},
+  {"id": 18, "term": "Jezebel", "hint": "person"},
+  {"id": 19, "term": "Gehazi", "hint": "person"},
+  {"id": 20, "term": "Jehu", "hint": "person"},
+  {"id": 21, "term": "Athaliah", "hint": "person"},
+  {"id": 22, "term": "Uzziah", "hint": "person"},
+  {"id": 23, "term": "Hezekiah", "hint": "person"},
+  {"id": 24, "term": "Josiah", "hint": "person"},
+  {"id": 25, "term": "Ezra", "hint": "person"},
+  {"id": 26, "term": "Leviathan", "hint": "abstract + animal"},
+  {"id": 27, "term": "Obadiah", "hint": "person"},
+  {"id": 28, "term": "Nahum", "hint": "person"},
+  {"id": 29, "term": "Habakkuk", "hint": "person"},
+  {"id": 30, "term": "Zephaniah", "hint": "person"},
+  {"id": 31, "term": "Haggai", "hint": "person"},
+  {"id": 32, "term": "Zechariah", "hint": "person"},
+  {"id": 33, "term": "False Prophet", "hint": "person + abstract"},
+  {"id": 34, "term": "Four Living Creatures", "hint": "person"},
+  {"id": 35, "term": "Twenty-Four Elders", "hint": "person"},
+  {"id": 36, "term": "144,000", "hint": "person"},
+  {"id": 37, "term": "Euphrates", "hint": "place"},
+  {"id": 38, "term": "Zion", "hint": "place"},
+  {"id": 39, "term": "Corinth", "hint": "place"},
+  {"id": 40, "term": "Ephesus", "hint": "place"},
+  {"id": 41, "term": "Galatia", "hint": "place"},
+  {"id": 42, "term": "Philippi", "hint": "place"},
+  {"id": 43, "term": "Colossae", "hint": "place"},
+  {"id": 44, "term": "Thessalonica", "hint": "place"},
+  {"id": 45, "term": "Philadelphia", "hint": "place"},
+  {"id": 46, "term": "Hosanna", "hint": "abstract"},
+  {"id": 47, "term": "Mammon", "hint": "abstract"},
+  {"id": 48, "term": "Centurion", "hint": "person"},
+  {"id": 49, "term": "Abimelech", "hint": "person"},
+  {"id": 50, "term": "Ahaz", "hint": "person"},
+  {"id": 51, "term": "Jehoiachin", "hint": "person"},
+  {"id": 52, "term": "Jehoiakim", "hint": "person"},
+  {"id": 53, "term": "Manasseh", "hint": "person"},
+  {"id": 54, "term": "City of Refuge", "hint": "place"},
+  {"id": 55, "term": "Whirlwind", "hint": "event + object"},
+  {"id": 56, "term": "Day of Atonement", "hint": "event"},
+  {"id": 57, "term": "Feast of Tabernacles", "hint": "event"},
+  {"id": 58, "term": "Feast of Weeks", "hint": "event"},
+  {"id": 59, "term": "Leaven", "hint": "abstract + object"},
+  {"id": 60, "term": "Simon the Cyrene", "hint": "person"},
+  {"id": 61, "term": "Coin in Fish's Mouth", "hint": "event + object"},
+  {"id": 62, "term": "Withered Fig Tree", "hint": "event"},
+  {"id": 63, "term": "Paul's Thorn in the Flesh", "hint": "abstract + scripture"},
+  {"id": 64, "term": "Candace", "hint": "person"},
+  {"id": 65, "term": "Paul's First Missionary Journey", "hint": "event"},
+  {"id": 66, "term": "Paul's Second Missionary Journey", "hint": "event"},
+  {"id": 67, "term": "Paul's Third Missionary Journey", "hint": "event"},
+  {"id": 68, "term": "Council of Jerusalem", "hint": "event"},
+  {"id": 69, "term": "Peter's Vision (Sheet from Heaven)", "hint": "event"},
+  {"id": 70, "term": "Gideon's Fleece", "hint": "event + object"},
+  {"id": 71, "term": "Elijah and the Prophets of Baal", "hint": "event"},
+  {"id": 72, "term": "Elijah Fed by Ravens", "hint": "event"},
+  {"id": 73, "term": "Seven Churches of Revelation", "hint": "place + scripture"},
+  {"id": 74, "term": "Veil Torn in Two", "hint": "event"},
+  {"id": 75, "term": "Binding of Isaac", "hint": "event"},
+  {"id": 76, "term": "Twelve Spies", "hint": "person + event"},
+  {"id": 77, "term": "Water from the Rock", "hint": "event"},
+  {"id": 78, "term": "Samuel Anoints David", "hint": "event"}
 ]

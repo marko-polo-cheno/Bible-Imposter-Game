@@ -3,28 +3,69 @@ import SwiftUI
 struct MainMenuView: View {
     @ObservedObject var vm: GameViewModel
     @State private var newPlayerName: String = ""
+    @State private var showSettings: Bool = false
     @FocusState private var isKeyboardVisible: Bool
     
     var body: some View {
-        VStack {
-            Text("Bible Imposter")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
-            
-            Picker("Difficulty", selection: $vm.selectedDifficulty) {
-                ForEach(Difficulty.allCases, id: \.self) { difficulty in
-                    Text(difficulty.rawValue).tag(difficulty)
+        VStack(spacing: 0) {
+            // Header with title and settings
+            HStack {
+                Spacer()
+                Text("Bible Imposter")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Spacer()
+                Button(action: { showSettings = true }) {
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.blue)
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
+            .padding(.horizontal)
+            .padding(.top)
             
+            // Current settings summary
+            HStack {
+                Text(vm.selectedDifficulty.rawValue)
+                Text("•")
+                Text(vm.selectedLanguage.rawValue)
+                if vm.showHintForImposter {
+                    Text("•")
+                    Text("Hints On")
+                }
+            }
+            .font(.caption)
+            .foregroundColor(.secondary)
+            .padding(.bottom, 24)
+            
+            // Start Game button - always visible at top
+            Button(action: { vm.startGame() }) {
+                Text("Start Game")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(vm.roster.count >= 3 ? Color.blue : Color.gray)
+                    .cornerRadius(10)
+            }
+            .disabled(vm.roster.count < 3)
+            .padding(.horizontal)
+            
+            if vm.roster.count < 3 {
+                Text("Need at least 3 players to start.")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .padding(.top, 4)
+            }
+            
+            // Add player section
             HStack {
                 TextField("Add Player Name", text: $newPlayerName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .focused($isKeyboardVisible)
                     .padding(.horizontal)
+                    .onSubmit { addPlayer() }
                 
                 Button(action: addPlayer) {
                     Image(systemName: "plus.circle.fill")
@@ -35,25 +76,11 @@ struct MainMenuView: View {
                 .disabled(newPlayerName.isEmpty)
                 .padding(.trailing)
             }
-            
-            HStack {
-                Text("Players")
-                    .font(.headline)
-                Spacer()
-                if !vm.roster.isEmpty {
-                    Button(action: {
-                        vm.removeAllPlayers()
-                    }) {
-                        Text("Clear All")
-                            .foregroundColor(.red)
-                            .font(.subheadline)
-                    }
-                }
-            }
-            .padding(.horizontal)
-            
+            .padding(.top, 16)
+            .padding(.bottom, 8)
+            // Player list
             List {
-                Section(footer: Text("Swipe left to remove a player")) {
+                Section(footer: footerView) {
                     ForEach(vm.roster) { player in
                         Text(player.name)
                     }
@@ -61,39 +88,10 @@ struct MainMenuView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            
-            if !isKeyboardVisible {
-                Button(action: {
-                    vm.startGame()
-                }) {
-                    Text("Start Game")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(vm.roster.count >= 3 ? Color.blue : Color.gray)
-                        .cornerRadius(10)
-                }
-                .disabled(vm.roster.count < 3)
-                .padding()
-                
-                if vm.roster.count < 3 {
-                    Text("Need at least 3 players to start.")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                        .padding(.bottom)
-                }
-                
-                Link("tjc.org", destination: URL(string: "https://tjc.org/")!)
-                    .padding(.bottom)
-                
-                Text("p.s. please email mark.chen@tjc.org if something seems off")
-                    .font(.caption2)
-                    .foregroundColor(.gray)
-                    .padding(.bottom)
-            }
         }
-        .padding(.top)
+        .sheet(isPresented: $showSettings) {
+            SettingsView(vm: vm)
+        }
         .alert(isPresented: $vm.showError) {
             Alert(
                 title: Text("Error"),
@@ -103,10 +101,23 @@ struct MainMenuView: View {
         }
     }
     
+    private var footerView: some View {
+        HStack {
+            Text("Swipe left to remove a player")
+            Spacer()
+            if !vm.roster.isEmpty {
+                Button("Clear All") {
+                    vm.removeAllPlayers()
+                }
+                .font(.footnote)
+                .foregroundColor(.red)
+            }
+        }
+    }
+    
     private func addPlayer() {
         guard !newPlayerName.isEmpty else { return }
         vm.addPlayer(name: newPlayerName)
         newPlayerName = ""
     }
 }
-

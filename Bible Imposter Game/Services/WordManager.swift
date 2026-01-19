@@ -3,26 +3,39 @@ import Foundation
 class WordManager {
     static let shared = WordManager()
     
-    private var easyWords: [BibleTerm] = []
-    private var mediumWords: [BibleTerm] = []
-    private var hardWords: [BibleTerm] = []
-    
     private let userDefaults = UserDefaults.standard
     
-    private init() {
-        loadWords()
+    private init() {}
+    
+    func getWord(for difficulty: Difficulty, language: Language) -> BibleTerm? {
+        let filename = difficulty.filename + language.suffix
+        guard let allWords = loadJSON(filename: filename), !allWords.isEmpty else {
+            return nil
+        }
+        
+        let historyKey = "history_\(difficulty.rawValue)_\(language.rawValue)"
+        var history = userDefaults.array(forKey: historyKey) as? [Int] ?? []
+        
+        var available = allWords.filter { !history.contains($0.id) }
+        
+        if available.isEmpty {
+            history.removeAll()
+            userDefaults.removeObject(forKey: historyKey)
+            available = allWords
+        }
+        
+        guard let selectedWord = available.randomElement() else { return nil }
+        
+        history.append(selectedWord.id)
+        userDefaults.set(history, forKey: historyKey)
+        
+        return selectedWord
     }
     
-    private func loadWords() {
-        easyWords = loadJSON(filename: "easy")
-        mediumWords = loadJSON(filename: "medium")
-        hardWords = loadJSON(filename: "hard")
-    }
-    
-    private func loadJSON(filename: String) -> [BibleTerm] {
+    private func loadJSON(filename: String) -> [BibleTerm]? {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
             print("Error: Could not find \(filename).json in bundle.")
-            return []
+            return nil
         }
         
         do {
@@ -31,49 +44,7 @@ class WordManager {
             return words
         } catch {
             print("Error decoding \(filename).json: \(error)")
-            return []
+            return nil
         }
-    }
-    
-    func getWord(for difficulty: Difficulty) -> BibleTerm? {
-        let allWords: [BibleTerm]
-        let historyKey: String
-        
-        switch difficulty {
-        case .easy:
-            allWords = easyWords
-            historyKey = "history_easy"
-        case .medium:
-            allWords = mediumWords
-            historyKey = "history_medium"
-        case .hard:
-            allWords = hardWords
-            historyKey = "history_hard"
-        }
-        
-        guard !allWords.isEmpty else { return nil }
-        
-        // Load history
-        var history = userDefaults.array(forKey: historyKey) as? [Int] ?? []
-        
-        // Filter available words
-        var available = allWords.filter { !history.contains($0.id) }
-        
-        // Reset if needed
-        if available.isEmpty {
-            history.removeAll()
-            userDefaults.removeObject(forKey: historyKey)
-            available = allWords
-        }
-        
-        // Pick random
-        guard let selectedWord = available.randomElement() else { return nil }
-        
-        // Update history
-        history.append(selectedWord.id)
-        userDefaults.set(history, forKey: historyKey)
-        
-        return selectedWord
     }
 }
-

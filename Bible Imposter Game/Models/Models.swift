@@ -2,14 +2,26 @@ import Foundation
 
 enum Difficulty: String, Codable, CaseIterable {
     case easy = "Easy"
-    case medium = "Medium"
     case hard = "Hard"
     
     var filename: String {
         switch self {
         case .easy: return "easy"
-        case .medium: return "medium"
         case .hard: return "hard"
+        }
+    }
+}
+
+enum Language: String, Codable, CaseIterable {
+    case english = "English"
+    case chinese = "中文"
+    case spanish = "Español"
+    
+    var suffix: String {
+        switch self {
+        case .english: return ""
+        case .chinese: return "-zh"
+        case .spanish: return "-es"
         }
     }
 }
@@ -17,6 +29,7 @@ enum Difficulty: String, Codable, CaseIterable {
 struct BibleTerm: Codable, Identifiable {
     let id: Int
     let term: String
+    let hint: String
 }
 
 struct Player: Codable, Identifiable, Hashable {
@@ -34,4 +47,3 @@ enum GameStatus {
     case playing
     case finished
 }
-
