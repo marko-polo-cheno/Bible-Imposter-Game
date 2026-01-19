@@ -41,13 +41,13 @@ struct GameSessionView: View {
                     .shadow(radius: 10)
                     .frame(height: 300)
                 
-                if isRevealed, let role = displayedRole {
+                if isRevealed {
                     VStack {
                         Text("Your Role:")
                             .font(.headline)
                             .foregroundColor(.white.opacity(0.8))
                         
-                        Text(role)
+                        Text(displayedRole ?? "")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(.white)
@@ -65,15 +65,12 @@ struct GameSessionView: View {
             .contentShape(Rectangle())
             .onLongPressGesture(minimumDuration: 0.5, pressing: { pressing in
                 if pressing {
-                    // Only fetch role when starting to reveal
                     displayedRole = vm.getRole(for: currentPlayer.id)
+                } else {
+                    displayedRole = nil
                 }
                 withAnimation {
                     isRevealed = pressing
-                }
-                if !pressing {
-                    // Clear the displayed role when releasing
-                    displayedRole = nil
                 }
             }) {}
             
