@@ -3,7 +3,7 @@ import SwiftUI
 struct GameSessionView: View {
     @ObservedObject var vm: GameViewModel
     @State private var isRevealed: Bool = false
-    @State private var showRole: Bool = false
+    @State private var displayedRole: String? = nil
     
     var body: some View {
         ZStack {
@@ -41,22 +41,18 @@ struct GameSessionView: View {
                     .shadow(radius: 10)
                     .frame(height: 300)
                 
-                if isRevealed {
+                if isRevealed, let role = displayedRole {
                     VStack {
                         Text("Your Role:")
                             .font(.headline)
                             .foregroundColor(.white.opacity(0.8))
                         
-                        Text(vm.getRole(for: currentPlayer.id))
-                            .font(.largeTitle)
+                        Text(role)
+                            .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(.white)
                             .multilineTextAlignment(.center)
                             .padding()
-                        
-                        if currentPlayer.id == vm.startingPlayerID {
-                            // Removed redundant "You start first" text since it's announced at the end
-                        }
                     }
                 } else {
                     Text("Hold to Reveal")
@@ -66,18 +62,27 @@ struct GameSessionView: View {
                 }
             }
             .padding(.horizontal)
-            .contentShape(Rectangle()) // Ensures gesture works on the whole card area
+            .contentShape(Rectangle())
             .onLongPressGesture(minimumDuration: 0.5, pressing: { pressing in
+                if pressing {
+                    // Only fetch role when starting to reveal
+                    displayedRole = vm.getRole(for: currentPlayer.id)
+                }
                 withAnimation {
                     isRevealed = pressing
                 }
-            }) {
-                // Action on release (optional)
-            }
+                if !pressing {
+                    // Clear the displayed role when releasing
+                    displayedRole = nil
+                }
+            }) {}
             
             Spacer()
             
             Button(action: {
+                // Clear state before moving to next player
+                isRevealed = false
+                displayedRole = nil
                 vm.nextPlayer()
             }) {
                 Text("Next Player")
@@ -101,7 +106,7 @@ struct GameSessionView: View {
             Text("The starting player is:")
                 .font(.title2)
             
-            if let startID = vm.startingPlayerID, 
+            if let startID = vm.startingPlayerID,
                let starter = vm.roster.first(where: { $0.id == startID }) {
                 Text(starter.name)
                     .font(.system(size: 36, weight: .heavy))
@@ -125,4 +130,3 @@ struct GameSessionView: View {
         }
     }
 }
-
