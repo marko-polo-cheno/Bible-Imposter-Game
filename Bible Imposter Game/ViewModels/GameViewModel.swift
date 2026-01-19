@@ -172,7 +172,7 @@ class GameViewModel: ObservableObject {
     func getRole(for playerID: UUID) -> String {
         if playerID == imposterID {
             if showHintForImposter, let hint = secretWord?.hint {
-                return "You are the Imposter!\nHint: \(hint)"
+                return "You are the Imposter!\n\nHint: \(hint)"
             }
             return "You are the Imposter!"
         } else {
